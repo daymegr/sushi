@@ -47,7 +47,7 @@ class JobMonitoringController < ApplicationController
   def print_log
     public_dir = File.expand_path('../../../public', __FILE__)
     text = @@workflow_manager.get_log(params[:job_id], :with_err)
-    render :plain => text.gsub(/\n/,'<br />')
+    render :plain => text
   end
   def print_script
     text = 'no script found'
@@ -58,7 +58,7 @@ class JobMonitoringController < ApplicationController
     else
       text = @@workflow_manager.get_script(params[:job_id])
     end
-    render :plain => text.gsub(/\n/,'<br />')
+    render :plain => text
   end
   def kill_job
     @status = 'kill job failed'
