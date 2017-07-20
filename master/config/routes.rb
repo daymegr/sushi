@@ -1,4 +1,4 @@
-SushiFabric::Application.routes.draw do
+Rails.application.routes.draw do
   get "sushi_application/index"
 
   root :to => "home#index"
