@@ -86,7 +86,7 @@ class RunApplicationController < ApplicationController
                                  else
                                    value
                                  end
-                               elsif @sushi_app.params.data_type(key) == String
+                               elsif value.instance_of?(String) or @sushi_app.params.data_type(key) == String
                                  value
                                else
                                  eval(value)
