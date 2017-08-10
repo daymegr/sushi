@@ -131,7 +131,7 @@ class RunApplicationController < ApplicationController
       end
     end
     params[:parameters].each do |key, value|
-      @sushi_app.params[key] = if value.instance_of?(String) or @sushi_app.params.data_type(key) == String
+      @sushi_app.params[key] = if @sushi_app.params.data_type(key) == String
                                        value
                                      else
                                        eval(value)
